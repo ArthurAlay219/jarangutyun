@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Երգարան - Հայկական Ժառանգություն</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="inner-page">
+
+    <header class="main-header">
+        <div class="logo">
+            <span class="eternity-sign" onclick="window.location.href='index.html';" style="cursor: pointer;">֎</span>
+            <span class="logo-text" onclick="window.location.href='index.html';" style="cursor: pointer;">ԵՐԳԱՐԱՆ</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Գլխավոր</a>
+            <a href="#">Պատկերասրահ</a>
+            <a href="#">Պատմութիւններ</a>
+        </nav>
+    </header>
+
+    <main class="songs-container">
+        <div class="songs-header">
+            <h2>Ազգային և Հոգևոր Մեղեդիներ</h2>
+            <div class="filter-bar">
+                <button class="active">Բոլորը</button>
+                <button>Ռազմական</button>
+                <button>Ծիսական</button>
+                <button>Աշուղական</button>
+            </div>
+        </div>
+
+        <div class="songs-list">
+           <div class="song-item" 
+     data-src="yarkushta.mp3" 
+     data-title="Յարխուշտա" 
+     data-artist="Ազգային ռազմապար">
+    
+    <div class="song-info">
+        <span class="song-number">01</span>
+        <div class="song-details">
+            <h3>Յարխուշտա</h3>
+            <p>Ազգային ռազմապար</p>
+        </div>
+    </div>
+    
+    <div class="song-controls">
+        <button class="play-btn">▶</button>
+        <span class="duration">03:45</span>
+    </div>
+</div>
+<div class="song-item" 
+     data-src="dleyaman.mp3" 
+     data-title="Դլե Յաման" 
+     data-artist="Ժողովրդական մեղեդի">
+    
+    <div class="song-info">
+        <span class="song-number">02</span>
+        <div class="song-details">
+            <h3>Դլե Յաման</h3>
+            <p>Ժողովրդական մեղեդի</p>
+        </div>
+    </div>
+    
+    <div class="song-controls">
+        <button class="play-btn">▶</button>
+        <span class="duration">03:45</span>
+    </div>
+</div>
+            
+            <div class="song-item"
+                     data-src="Կոմիտաս - Գնա', գնա' (Կատարող' Արմենակ Շահմուրադյան - NARKOZ.mp3" 
+     data-title="Գնա՛ Գնա՛" 
+     data-artist="Ժողովրդական մեղեդի">
+    
+                <div class="song-info">
+                    <span class="song-number">03</span>
+                    <div class="song-details">
+                        <h3>Գնա գնա</h3>
+                        <p>Կոմիտաս</p>
+                    </div>
+                </div>
+                <div class="song-controls">
+                    <button class="play-btn">▶</button>
+                    <span class="duration">02:30</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <footer class="mini-player">
+    <div class="player-content">
+        <div class="current-song">
+            <h1>֎</h1>
+            <div>
+                <h4>Ընտրեք երգ</h4>
+                <p>---</p>
+            </div>
+        </div>
+
+        <div class="player-middle">
+            <div class="player-controls">
+                <button id="prev-btn">⏮</button>
+                <button class="main-play">▶</button>
+                <button id="next-btn">⏭</button>
+            </div>
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" max="100">
+                <span id="duration-time">0:00</span>
+            </div>
+        </div>
+
+        <div class="volume-container">
+            <span>🔊</span>
+            <input type="range" id="volume-bar" value="100" max="100">
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+
+</html>
