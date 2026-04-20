@@ -304,3 +304,20 @@ input[type="range"] {
     min-width: 35px;
     opacity: 0.8;
 }
+#song-link[href^="yarkushta"], #song-link[href^="dleyaman"] {
+    transition: opacity 0.3s;
+}
+
+#song-link:hover h4 {
+    color: #ffcc00; /* Ոսկեգույն, երբ մկնիկը վրան է */
+    text-decoration: underline;
+}
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+    background-color: #e6b800;
+}
+
+.download-btn:active {
+    transform: translateY(1px);
+}

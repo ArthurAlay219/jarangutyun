@@ -24,101 +24,170 @@
         <div class="songs-header">
             <h2>Ազգային և Հոգևոր Մեղեդիներ</h2>
             <div class="filter-bar">
-                <button class="active">Բոլորը</button>
-                <button>Ռազմական</button>
-                <button>Ծիսական</button>
-                <button>Աշուղական</button>
+                <button class="active" data-filter="all">Բոլորը</button>
+                <button data-filter="ռազմական">Ռազմական</button>
+                <button data-filter="ծիսական">Ծիսական</button>
+                <button data-filter="ժողովրդական">Ժողովրդական</button>
             </div>
         </div>
 
         <div class="songs-list">
-           <div class="song-item" 
-     data-src="yarkushta.mp3" 
-     data-title="Յարխուշտա" 
-     data-artist="Ազգային ռազմապար">
-    
-    <div class="song-info">
-        <span class="song-number">01</span>
-        <div class="song-details">
-            <h3>Յարխուշտա</h3>
-            <p>Ազգային ռազմապար</p>
-        </div>
-    </div>
-    
-    <div class="song-controls">
-        <button class="play-btn">▶</button>
-        <span class="duration">03:45</span>
-    </div>
-</div>
-<div class="song-item" 
-     data-src="dleyaman.mp3" 
-     data-title="Դլե Յաման" 
-     data-artist="Ժողովրդական մեղեդի">
-    
-    <div class="song-info">
-        <span class="song-number">02</span>
-        <div class="song-details">
-            <h3>Դլե Յաման</h3>
-            <p>Ժողովրդական մեղեդի</p>
-        </div>
-    </div>
-    
-    <div class="song-controls">
-        <button class="play-btn">▶</button>
-        <span class="duration">03:45</span>
-    </div>
-</div>
-            
-            <div class="song-item"
-                     data-src="Կոմիտաս - Գնա', գնա' (Կատարող' Արմենակ Շահմուրադյան - NARKOZ.mp3" 
-     data-title="Գնա՛ Գնա՛" 
-     data-artist="Ժողովրդական մեղեդի">
-    
-                <div class="song-info">
-                    <span class="song-number">03</span>
-                    <div class="song-details">
-                        <h3>Գնա գնա</h3>
-                        <p>Կոմիտաս</p>
-                    </div>
-                </div>
-                <div class="song-controls">
-                    <button class="play-btn">▶</button>
-                    <span class="duration">02:30</span>
-                </div>
+            <div class="song-item" data-src="songs/yarkushta.mp3" data-title="Յարխուշտա" data-artist="Ազգային ռազմապար" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">01</span><div class="song-details"><h3>Յարխուշտա</h3><p>Ազգային ռազմապար</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:45</span></div>
+            </div>
+            <div class="song-item" data-src="songs/dleyaman.mp3" data-title="Դլե Յաման" data-artist="Ժողովրդական մեղեդի" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">02</span><div class="song-details"><h3>Դլե Յաման</h3><p>Ժողովրդական մեղեդի</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:45</span></div>
+            </div>
+            <div class="song-item" data-src="songs/gnagna.mp3" data-title="Գնա գնա" data-artist="Կոմիտաս" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">03</span><div class="song-details"><h3>Գնա գնա</h3><p>Կոմիտաս</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">02:30</span></div>
+            </div>
+            <div class="song-item" data-src="songs/merig.mp3" data-title="Մայրիկ շփե" data-artist="Ներսիկ Իսպիրյան" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">04</span><div class="song-details"><h3>Մայրիկ շփե</h3><p>Ներսիկ Իսպիրյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:02</span></div>
+            </div>
+            <div class="song-item" data-src="songs/Andranik.mp3" data-title="Անդրանիկ Փաշա" data-artist="Անհայտ կատարող" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">05</span><div class="song-details"><h3>Անդրանիկ Փաշա</h3><p>Անհայտ կատարող</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:53</span></div>
+            </div>
+            <div class="song-item" data-src="songs/eleqhayer.mp3" data-title="Ելեք հայեր" data-artist="Սահակ Սահակյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">06</span><div class="song-details"><h3>Ելեք հայեր</h3><p>Սահակ Սահակյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:54</span></div>
+            </div>
+            <div class="song-item" data-src="songs/zorananq.mp3" data-title="Զորանանք" data-artist="Իսպիրյաններ" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">07</span><div class="song-details"><h3>Զորանանք</h3><p>Ներսիկ, Արաբո, Աղասի Իսպիրյաններ</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">04:13</span></div>
+            </div>
+            <div class="song-item" data-src="songs/vrej.mp3" data-title="Վրեժ" data-artist="Ներսիկ Իսպիրյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">08</span><div class="song-details"><h3>Վրեժ</h3><p>Ներսիկ Իսպիրյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">04:27</span></div>
+            </div>
+            <div class="song-item" data-src="songs/taltala.mp3" data-title="Տալ-Տալա" data-artist="Վիգեն Հովսեփյան" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">09</span><div class="song-details"><h3>Տալ-Տալա</h3><p>Վիգեն Հովսեփյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">05:16</span></div>
+            </div>
+            <div class="song-item" data-src="songs/sharan.mp3" data-title="Սասնա երգերի շարան" data-artist="Իսպիրյաններ" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">10</span><div class="song-details"><h3>Սասնա երգերի շարան</h3><p>Աղասի, Ներսիկ, Արաբո Իսպիրյաններ</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">13:46</span></div>
+            </div>
+
+            <div class="song-item" data-src="songs/mushergir.mp3" data-title="Մուշ էրգիր" data-artist="Աղասի Իսպիրյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">11</span><div class="song-details"><h3>Մուշ էրգիր</h3><p>Աղասի Իսպիրյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:49</span></div>
+            </div>
+            <div class="song-item" data-src="songs/msheci.mp3" data-title="Մշեցու զավակ" data-artist="Դավիթ Զաքարյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">12</span><div class="song-details"><h3>Մշեցու զավակ</h3><p>Դավիթ Զաքարյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:57</span></div>
+            </div>
+            <div class="song-item" data-src="songs/laz.mp3" data-title="Բալու Լազ պարի" data-artist="Սևակ Ամրոյան" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">13</span><div class="song-details"><h3>Բալու Լազ պարի</h3><p>Սևակ Ամրոյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:58</span></div>
+            </div>
+            <div class="song-item" data-src="songs/krunk.mp3" data-title="Կռունկ" data-artist="Աղասի Իսպիրյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">14</span><div class="song-details"><h3>Կռունկ</h3><p>Աղասի Իսպիրյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:05</span></div>
+            </div>
+            <div class="song-item" data-src="songs/jrerut.mp3" data-title="Կարոտցել եմ ջրերուտ" data-artist="Ներսիկ Իսպիրյան" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">15</span><div class="song-details"><h3>Կարոտցել եմ ջրերուտ</h3><p>Ներսիկ Իսպիրյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">01:18</span></div>
+            </div>
+            <div class="song-item" data-src="songs/jan.mp3" data-title="Ջան Ջերյան" data-artist="Իսպիրյաններ" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">16</span><div class="song-details"><h3>Ջան Ջերյան</h3><p>Ներսիկ, Արաբո Իսպիրյաններ</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">08:02</span></div>
+            </div>
+            <div class="song-item" data-src="songs/hoynare.mp3" data-title="Հոյ Նարե" data-artist="Անսամբլ" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">17</span><div class="song-details"><h3>Հոյ Նարե</h3><p>Անսամբլ</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">02:29</span></div>
+            </div>
+            <div class="song-item" data-src="songs/hele.mp3" data-title="Հելե, հելե" data-artist="Վիգեն Հովսեփյան" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">18</span><div class="song-details"><h3>Հելե, հելե</h3><p>Վիգեն Հովսեփյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:57</span></div>
+            </div>
+            <div class="song-item" data-src="songs/hanina.mp3" data-title="Հանինա" data-artist="Անսամբլ" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">19</span><div class="song-details"><h3>Հանինա</h3><p>Անսամբլ</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:06</span></div>
+            </div>
+            <div class="song-item" data-src="songs/gqele.mp3" data-title="Կը Քելե" data-artist="Ազգային" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">20</span><div class="song-details"><h3>Կը Քելե</h3><p>Ազգային</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">02:19</span></div>
+            </div>
+
+            <div class="song-item" data-src="songs/getashen.mp3" data-title="Գետաշեն" data-artist="Սահակ Սահակյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">21</span><div class="song-details"><h3>Գետաշեն</h3><p>Սահակ Սահակյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:52</span></div>
+            </div>
+            <div class="song-item" data-src="songs/garegin.mp3" data-title="Գարեգին Նժդեհ" data-artist="Թովմաս Պողոսյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">22</span><div class="song-details"><h3>Գարեգին Նժդեհ</h3><p>Թովմաս Պողոսյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">04:38</span></div>
+            </div>
+            <div class="song-item" data-src="songs/fedayi.mp3" data-title="Ֆեդայի" data-artist="Ազգային" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">23</span><div class="song-details"><h3>Ֆեդայի</h3><p>Ազգային ֆիդայական</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:38</span></div>
+            </div>
+            <div class="song-item" data-src="songs/dro.mp3" data-title="Դրոյի հիշատակին" data-artist="Սահակ Սահակյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">24</span><div class="song-details"><h3>Դրոյի հիշատակին</h3><p>Սահակ Սահակյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:52</span></div>
+            </div>
+            <div class="song-item" data-src="songs/cronq.mp3" data-title="Ցրոնքի կռիվը" data-artist="Սահակ Սահակյան" data-genre="ռազմական">
+                <div class="song-info"><span class="song-number">25</span><div class="song-details"><h3>Ցրոնքի կռիվը</h3><p>Սահակ Սահակյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">02:42</span></div>
+            </div>
+            <div class="song-item" data-src="songs/caxkac.mp3" data-title="Ծաղկած էրգիր" data-artist="Ներսիկ Իսպիրյան" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">26</span><div class="song-details"><h3>Ծաղկած էրգիր</h3><p>Ներսիկ Իսպիրյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">04:23</span></div>
+            </div>
+            <div class="song-item" data-src="songs/broyi.mp3" data-title="Բրոյի-Բրոյի" data-artist="Ազգային" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">27</span><div class="song-details"><h3>Բրոյի-Բրոյի</h3><p>Ազգային</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">02:59</span></div>
+            </div>
+            <div class="song-item" data-src="songs/barer.mp3" data-title="Սասնո բառերի շարան" data-artist="Ներսիկ Իսպիրյան" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">28</span><div class="song-details"><h3>Սասնո բառերի շարան</h3><p>Ներսիկ Իսպիրյան</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">06:19</span></div>
+            </div>
+            <div class="song-item" data-src="songs/babo.mp3" data-title="Վայ Բաբո" data-artist="Ethno Colors" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">29</span><div class="song-details"><h3>Վայ Բաբո</h3><p>Ethno Colors</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">03:33</span></div>
+            </div>
+            <div class="song-item" data-src="songs/ari sirun.mp3" data-title="Արի սիրուն" data-artist="Անսամբլ" data-genre="ժողովրդական">
+                <div class="song-info"><span class="song-number">30</span><div class="song-details"><h3>Արի սիրուն</h3><p>Անսամբլ</p></div></div>
+                <div class="song-controls"><button class="play-btn">▶</button><span class="duration">05:08</span></div>
             </div>
         </div>
     </main>
 
-   <footer class="mini-player">
-    <div class="player-content">
-        <div class="current-song">
-            <h1>֎</h1>
-            <div>
-                <h4>Ընտրեք երգ</h4>
-                <p>---</p>
+    <footer class="mini-player">
+        <div class="player-content">
+            <div class="current-song">
+                <h1>֎</h1>
+                <div>
+                    <a id="song-link" href="#" style="text-decoration: none; color: inherit; cursor: default;">
+                        <h4 id="footer-song-name">Ընտրեք երգ</h4>
+                        <p id="footer-artist-name">---</p>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="player-middle">
-            <div class="player-controls">
-                <button id="prev-btn">⏮</button>
-                <button class="main-play">▶</button>
-                <button id="next-btn">⏭</button>
+            <div class="player-middle">
+                <div class="player-controls">
+                    <button id="prev-btn">⏮</button>
+                    <button class="main-play">▶</button>
+                    <button id="next-btn">⏭</button>
+                </div>
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress-bar" value="0" max="100">
+                    <span id="duration-time">0:00</span>
+                </div>
             </div>
-            <div class="progress-container">
-                <span id="current-time">0:00</span>
-                <input type="range" id="progress-bar" value="0" max="100">
-                <span id="duration-time">0:00</span>
+            <div class="volume-container">
+                <span>🔊</span>
+                <input type="range" id="volume-bar" value="100" max="100">
             </div>
         </div>
+    </footer>
 
-        <div class="volume-container">
-            <span>🔊</span>
-            <input type="range" id="volume-bar" value="100" max="100">
-        </div>
-    </div>
-</footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
