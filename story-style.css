@@ -1,0 +1,90 @@
+:root {
+    --gold: #d4af37;
+    --bg-dark: #0a0a0a;
+    --text-gray: #bbb;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Segoe UI', serif;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.story-container {
+    max-width: 900px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+}
+.main-header {
+    position: fixed;    /* Սա սոսնձում է header-ը էկրանին */
+    top: 0;             /* Կպցնում է ամենավերևին */
+    left: 0;
+    width: 100%;        /* Տարածվում է ամբողջ լայնությամբ */
+    z-index: 2000;      /* Ապահովում է, որ header-ը լինի բոլոր էլեմենտներից վերև */
+    background: rgba(10, 10, 10, 0.9); /* Թափանցիկ սև՝ blur էֆեկտի համար */
+    backdrop-filter: blur(10px);       /* Էլեգանտ blur էֆեկտ հետևի ֆոնի համար */
+    border-bottom: 1px solid var(--gold); /* Նրբագեղ գիծ ներքևից */
+    height: 70px;       /* Հաստատուն բարձրություն */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+.story-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.story-header h1 {
+    font-size: 3rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.story-subtitle {
+    font-style: italic;
+    color: var(--text-gray);
+    font-size: 1.2rem;
+}
+
+.main-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border: 1px solid #222;
+    margin-bottom: 40px;
+    background: #000;
+}
+
+.story-content {
+    font-size: 1.15rem;
+    text-align: justify;
+    color: #ececec;
+}
+
+.story-content h2 {
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 50px;
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    padding: 10px 25px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    background: var(--gold);
+    color: black;
+}

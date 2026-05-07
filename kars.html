@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Կարս. Անառիկ Բերդաքաղաք</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>ԿԱՐՍ</h1>
+            <div class="gold-line"></div>
+            <p>Հայկական լեռնաշխարհի անառիկ բերդաքաղաքն ու մայրաքաղաքը</p>
+            <style>
+                /* Ոսկեգույն և սև գունային գամմա */
+:root {
+    --gold: #d4af37;
+    --dark-gold: #aa8c2c;
+    --black: #1a1a1a;
+    --dark-grey: #2a2a2a;
+    --light-grey: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--black);
+    color: var(--light-grey);
+    line-height: 1.8;
+}
+
+/* Header */
+.hero {
+    height: 80vh;
+    background: url('https://images.unsplash.com/photo-1518391846015-55a9ca003b25?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 4px solid var(--gold);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    color: var(--gold);
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+.gold-line {
+    width: 150px;
+    height: 3px;
+    background: var(--gold);
+    margin: 10px auto 20px;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+.section-title {
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--gold);
+    padding-left: 15px;
+}
+
+.flex-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.flex-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-box {
+    flex: 1;
+}
+
+.text-box p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.img-frame {
+    flex: 1;
+    border: 2px solid var(--gold);
+    padding: 10px;
+    background: var(--dark-grey);
+}
+
+.img-frame img {
+    width: 100%;
+    display: block;
+    filter: sepia(20%);
+}
+
+/* Monuments */
+.monuments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.monument-item {
+    background: var(--dark-grey);
+    border: 1px solid #444;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.monument-item:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.monument-item h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.monument-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.monument-item p {
+    font-size: 0.95rem;
+}
+
+/* Dark Section Decor */
+.dark-section {
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 15px;
+    padding: 40px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 50px;
+    background: #000;
+    border-top: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .flex-row, .flex-row.reverse {
+        flex-direction: column;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+            </style>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <!-- Section I -->
+        <section class="section">
+            <h2 class="section-title">I. Կարսի ընդհանուր բնութագիրը և նախապատմությունը</h2>
+            <div class="flex-row">
+                <div class="text-box">
+                    <p>Կարսը՝ Հայկական լեռնաշխարհի անառիկ բերդաքաղաքներից մեկը, գտնվում է Այրարատ նահանգի Վանանդ գավառում՝ Կարսագետի ափին, ծովի մակերևույթից շուրջ 1750 մետր բարձրության վրա։</p>
+                    <p> Պատմական աղբյուրներում այն հիշատակվում է որպես «Ամուրն Կարուց», Կարուց քաղաք կամ Ղարս։ Քաղաքի հիմնադրման ստույգ թիվը հայտնի չէ, սակայն բնակավայրն ու բերդը գոյություն են ունեցել դեռևս Ուրարտական ժամանակաշրջանում (Ք.ա. 9-րդ դար)։ Ըստ ավանդության՝ քաղաքի անունը կապվում է «կարուց» (կառուցել) բառի կամ Կարի անունով հիմնադրի հետ։ Կարսը եղել է Վանանդի իշխանական տան՝ Կամսարականների տոհմի տիրույթը, որը հետագայում անցել է Բագրատունիներին։ Քաղաքը կառուցված է տեղական սև տուֆից, ինչը նրան հաղորդում է խիստ, վեհաշուք և մոնումենտալ տեսք։ Այն հանդիսացել է ռազմավարական կարևորագույն հանգույց՝ կապելով Արևելքն ու Արևմուտքը, ինչի պատճառով էլ դարեր շարունակ եղել է նվաճողների ուշադրության կենտրոնում։</p>
+                <div class="img-frame">
+                    <img src="https://images.unsplash.com/photo-1590073844006-33379778ae09?auto=format&fit=crop&w=800&q=80" alt="Կարսի տեսարան">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section II -->
+        <section class="section gold-border">
+            <h2 class="section-title">II. Հայահպատակ ժամանակաշրջանը և բարգավաճումը</h2>
+            <div class="flex-row reverse">
+                <div class="text-box">
+                    <p>Կարսի պատմության ոսկեդարը սկսվեց 10-րդ դարում, որբ այն դարձավ Բագրատունյաց Հայաստանի մայրաքաղաքը (928-961 թթ.)։ Աբաս Ա Բագրատունի թագավորի օրոք քաղաքը վերածվեց հզոր մշակութային և առևտրային կենտրոնի։ Այս շրջանում Կարսը բարգավաճեց. կառուցվեցին պաշտպանական նոր պարիսպներ, շքեղ պալատներ և տաճարներ։</p>
+                    <p>Նույնիսկ այն բանից հետո, երբ մայրաքաղաքը տեղափոխվեց Անի, Կարսը մնաց որպես Վանանդի կամ Կարսի թագավորության կենտրոն (963-1065 թթ.)։ Քաղաքը հայտնի էր իր արհեստավորներով, հատկապես զինագործներով ու քարագործներով, և հանդիսանում էր հայկական պետականության հենասյուներից մեկը՝ մինչև բյուզանդական և սելջուկյան արշավանքները։</p>
+                </div>
+                <div class="img-frame">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Kars_Castle_and_Stone_Bridge.jpg" alt="Բարգավաճ Կարս">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section III -->
+        <section class="section">
+            <h2 class="section-title">III. Կարևոր իրադարձություններ և մշակութային կոթողներ</h2>
+            <p class="intro-text">Կարսի պատմությունը լի է հերոսական պաշտպանություններով և ճարտարապետական գլուխգործոցներով:</p>
+            
+            <div class="monuments">
+                <div class="monument-item">
+                    <h3>Կարսի Բերդ</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Kars_Castle.jpg" alt="Բերդ">
+                    <p>Քաղաքի գլխավոր խորհրդանիշն է, որը վեր է խոյանում ժայռի գագաթին։ Այն բազմիցս քանդվել և վերակառուցվել է։ Բերդի շուրջ հյուսված են բազմաթիվ առասպելներ. ասում են, որ դրա ստորգետնյա անցուղիները հասնում են մինչև գետի ափը։</p>
+                </div>
+
+                <div class="monument-item">
+                    <h3>Սուրբ Առաքելոց եկեղեցի</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Kars_Apostles_Church.jpg" alt="Եկեղեցի">
+                    <p>Կառուցվել է Աբաս Բագրատունու կողմից (929-943 թթ.)։ Այն քառակոնք կենտրոնագմբեթ կառույց է։ Գմբեթի թմբուկի վրա պատկերված են 12 առաքյալների քանդակները։</p>
+                </div>
+
+                <div class="monument-item">
+                    <h3>Վարդանի կամուրջ</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Kars_Castle_and_Stone_Bridge.jpg" alt="Կամուրջ">
+                    <p>Կարսագետի վրա ձգվող քարե կամուրջը։ Այն կրում է սպարապետ Վարդան Մամիկոնյանի անունը և համարվում է հայոց քաջության ու միասնության խորհրդանիշ։</p>
+                </div>
+
+                <div class="monument-item">
+                    <h3>Եղիշե Չարենցի տունը</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/House_of_Yeghishe_Charents_in_Kars.jpg" alt="Չարենցի տուն">
+                    <p>Թեև այն այսօր ավերված է, սակայն Կարսը մնում է մեծ բանաստեղծի «նաիրյան» ոգու ծննդավայրը։ Չարենցը Կարսն անվանել է «արևոտ ու քարոտ քաղաք»։</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section IV -->
+        <section class="section dark-section">
+            <h2 class="section-title">IV. Կարսը օտարի լծի տակ և այսօր</h2>
+            <div class="flex-row">
+                <div class="text-box">
+                    <p>11-րդ դարից սկսած Կարսն անցել է ձեռքից ձեռք՝ սելջուկներ, մոնղոլներ, պարսիկներ և օսմանյան թուրքեր։ 19-րդ դարում այն դարձավ ռուս-թուրքական պատերազմների կենտրոնակետը։ 1878-1917 թթ. Կարսը գտնվում էր Ռուսական կայսրության կազմում, ինչի շնորհիվ քաղաքը ստացավ նոր՝ եվրոպական տեսք.</p>
+                    <p>1920 թվականի հոկտեմբերի 30-ին Կարսն անկում ապրեց և անցավ Թուրքիայի տիրապետության տակ։ Այսօր Կարսը ժամանակակից թուրքական քաղաք է, որտեղ ամեն քայլափոխի զգացվում է հայկական անցյալը։ Սուրբ Առաքելոց եկեղեցին գործում է որպես մզկիթ, բերդը վերածվել է զբոսաշրջային վայրի։</p>
+                </div>
+                <div class="img-frame">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Russian_Architecture_in_Kars.jpg" alt="Կարսի փողոցներ">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Կարսի Պատմական Անձնագիր</p>
+    </footer>
+
+</body>
+</html>

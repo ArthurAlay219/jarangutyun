@@ -23,6 +23,7 @@ body {
     display: inline-block
 }
 
+
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -53,7 +54,57 @@ body {
 }
 
 .nav-links a:hover { color: var(--accent-gold); }
+.filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid #d4af37; /* Ոսկեգույն՝ էթնո ոճի համար */
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #d4af37;
+    color: #000;
+}
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 20px 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.nav-btn:hover { background: var(--gold); color: black; }
+.prev-btn { left: -60px; }
+.next-btn { right: -60px; }
+
+.image-counter {
+    margin-top: 20px;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Մոբայլի դեպքում կոճակները ներս բերենք */
+@media (max-width: 1300px) {
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+}
 /* Hero Section - ՔՈ ՆԿԱՐԸ ԱՅՍՏԵՂ Է */
 .hero-section {
     height: 100vh;
