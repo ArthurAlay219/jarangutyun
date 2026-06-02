@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Տիգրանակերտ. Արքայից Արքայի Հզոր Մայրաքաղաքը</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>ՏԻԳՐԱՆԱԿԵՐՏ</h1>
+            <div class="gold-line"></div>
+            <p>Արքայից արքայի հզոր մայրաքաղաքը և հին աշխարհի մեծագույն մեգապոլիսը</p>
+            <style>
+                /* Ոսկեգույն և սև գունային գամմա */
+                :root {
+                    --gold: #d4af37;
+                    --dark-gold: #aa8c2c;
+                    --black: #1a1a1a;
+                    --dark-grey: #2a2a2a;
+                    --light-grey: #e0e0e0;
+                }
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                body {
+                    font-family: 'Georgia', serif;
+                    background-color: var(--black);
+                    color: var(--light-grey);
+                    line-height: 1.8;
+                }
+
+                /* Header */
+                .hero {
+                    height: 80vh;
+                    background: url('images/tigranakert_hero.png') center/cover no-repeat fixed; /* Շապիկի նկար */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    border-bottom: 4px solid var(--gold);
+                }
+
+                .hero-overlay {
+                    position: absolute;
+                    top: 0; left: 0; width: 100%; height: 100%;
+                    background: rgba(0, 0, 0, 0.7);
+                }
+
+                .hero-content {
+                    position: relative;
+                    z-index: 1;
+                    text-align: center;
+                }
+
+                .hero-content h1 {
+                    font-size: 5rem;
+                    color: var(--gold);
+                    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+                    margin-bottom: 10px;
+                }
+
+                .gold-line {
+                    width: 150px;
+                    height: 3px;
+                    background: var(--gold);
+                    margin: 10px auto 20px;
+                }
+
+                /* Main Content */
+                .main-content {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 40px 20px;
+                }
+
+                .section {
+                    margin-bottom: 80px;
+                    padding: 20px;
+                }
+
+                .section-title {
+                    color: var(--gold);
+                    font-size: 2rem;
+                    margin-bottom: 40px;
+                    border-left: 5px solid var(--gold);
+                    padding-left: 15px;
+                }
+
+                .flex-row {
+                    display: flex;
+                    gap: 40px;
+                    align-items: flex-start;
+                }
+
+                .flex-row.reverse {
+                    flex-direction: row-reverse;
+                }
+
+                .text-box {
+                    flex: 1;
+                }
+
+                .text-box p {
+                    margin-bottom: 20px;
+                    font-size: 1.1rem;
+                    text-align: justify;
+                }
+
+                .img-frame {
+                    flex: 1;
+                    border: 2px solid var(--gold);
+                    padding: 10px;
+                    background: var(--dark-grey);
+                }
+
+                .img-frame img {
+                    width: 100%;
+                    display: block;
+                    filter: sepia(20%);
+                }
+
+                /* Blocks Grid */
+                .monuments {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 30px;
+                    margin-top: 40px;
+                }
+
+                .monument-item {
+                    background: var(--dark-grey);
+                    border: 1px solid #444;
+                    padding: 20px;
+                    transition: 0.3s;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .monument-item:hover {
+                    border-color: var(--gold);
+                    transform: translateY(-5px);
+                }
+
+                .monument-item h3 {
+                    color: var(--gold);
+                    margin-bottom: 15px;
+                    font-size: 1.3rem;
+                }
+
+                .monument-item img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    margin-bottom: 15px;
+                    border-bottom: 2px solid var(--gold);
+                }
+
+                .monument-item p {
+                    font-size: 0.95rem;
+                    text-align: justify;
+                }
+
+                /* Dark Section Decor */
+                .dark-section {
+                    background: rgba(212, 175, 55, 0.05);
+                    border-radius: 15px;
+                    padding: 40px;
+                }
+
+                /* Footer */
+                footer {
+                    text-align: center;
+                    padding: 50px;
+                    background: #000;
+                    border-top: 1px solid var(--gold);
+                    color: var(--gold);
+                }
+
+                /* Mobile responsive */
+                @media (max-width: 768px) {
+                    .flex-row, .flex-row.reverse {
+                        flex-direction: column;
+                    }
+                    .hero-content h1 {
+                        font-size: 3rem;
+                    }
+                }
+
+                /* Lightbox Styles */
+                .lightbox {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    padding-top: 50px;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.9);
+                }
+
+                .lightbox-content {
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    max-width: 900px;
+                    border: 3px solid var(--gold);
+                    box-shadow: 0 0 20px var(--gold);
+                    animation: zoom 0.6s;
+                }
+
+                #caption {
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    max-width: 700px;
+                    text-align: center;
+                    color: var(--gold);
+                    padding: 20px 0;
+                    font-size: 1.2rem;
+                    font-style: italic;
+                }
+
+                .close-lightbox {
+                    position: absolute;
+                    top: 20px;
+                    right: 35px;
+                    color: var(--gold);
+                    font-size: 40px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                .close-lightbox:hover {
+                    color: white;
+                }
+
+                @media (max-width: 768px) {
+                    .lightbox-content { width: 95%; }
+                    .prev, .next { font-size: 30px; }
+                }
+
+                @keyframes zoom {
+                    from {transform: scale(0)}
+                    to {transform: scale(1)}
+                }
+
+                .img-frame img, .monument-item img {
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                .img-frame img:hover, .monument-item img:hover {
+                    opacity: 0.8;
+                }
+
+                /* Սլաքներ */
+                .prev, .next {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    width: auto;
+                    padding: 16px;
+                    margin-top: -50px;
+                    color: var(--gold);
+                    font-weight: bold;
+                    font-size: 50px;
+                    transition: 0.6s ease;
+                    user-select: none;
+                    z-index: 1001;
+                }
+
+                .next { right: 5%; }
+                .prev { left: 5%; }
+
+                .prev:hover, .next:hover {
+                    color: white;
+                    background-color: rgba(0,0,0,0.8);
+                }
+            </style>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="section">
+            <h2 class="section-title">I. Տիգրանակերտ. Մայրաքաղաքի հիմնադրումն ու նախապատմությունը</h2>
+            <div class="flex-row">
+                <div class="text-box">
+                    <p>Հայոց նախնադարյան պատմության մեջ կան հեղինակություններ, որոնք անքննարկելի են, և այդ ցուցակում առաջինը Տիգրան Մեծն է։ Քրիստոսից առաջ 80-ական թվականներին, երբ նա ստեղծեց իր աշխարհակալությունը, անհրաժեշտություն առաջացավ հիմնելու նոր մայրաքաղաք։ Հին մայրաքաղաք Արտաշատն արդեն հայտնվել էր տերության հյուսիսային ծայրամասում, ուստի պետք էր նոր կենտրոն։</p>
+                    <p>Տիգրան Մեծն ընտրեց այն վայրը, որտեղ Քրիստոսից առաջ 95 թվականին, պարթևական պատանդությունից վերադառնալով, թագադրվել էր ինքը. դա հարավային Հայաստանի Աղձնիք աշխարհի տարածքն էր։ Կառուցվեց շքեղագույն մի քաղաք, որի բնակչությունն անցնում էր 100,000-ից՝ դառնալով իր ժամանակի աշխարհի մեծագույն մեգապոլիսներից մեկը։</p>
+                </div>
+                <div class="img-frame">
+                    <img src="images/tigranakert_city.png" alt="Տիգրանակերտ մայրաքաղաքի պատմական տարածքը">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">II. Տեղորոշումը, Սիլվան քաղաքը և Բաթմանի կամուրջը</h2>
+            <div class="flex-row reverse">
+                <div class="text-box">
+                    <p>Պատմական աղբյուրների համաձայն՝ Տիգրանակերտը գտնվել է Մեծ Հայքի Աղձնիք աշխարհում։ Գիտնականների շրջանում երկար ժամանակ ընթացել են բանավեճեր քաղաքի հստակ տեղի վերաբերյալ։ Առավել ընդունված է գերմանացի գիտնական Լեհման-Հաուպտի այն առաջարկը, որ Տիգրանակերտ մայրաքաղաքը պետք է նույնացնել ներկայիս թուրքական Սիլվան քաղաքի տարածքում գտնվող ամրոցի ավերակների հետ։ Ժամանակի ընթացքում այս կառույցը կրել է նաև Նփրկերտ, Մարտիրոսուպոլիս, Մուաֆարգին և այլ անուններ։</p>
+                    <p>Սիլվան քաղաքում և մերձակա շուրջ 45 գյուղերում այսօր բնակվում են մահմեդականացված հայեր։ Նրանց զգալի մասը 1915 թվականի Մեծ եղեռնի ժամանակ Մուշից և Սասունից տեղահանված ու իսլամացված հայերի սերունդներն են։ Նրանք պահպանել են իրենց հայ լինելու հիշողությունը և հպարտությամբ են խոսում այդ մասին։</p>
+                    <p>Տիգրանակերտ տանող ճանապարհն անցնում է լեգենդար Բաթմանի կամրջով, որը գտնվում է նույնանուն գետի վրա։ Այն ունի 50-ից 60 մետր երկարությամբ թռիչք և տարածաշրջանի գեղեցկագույն կառույցներից մեկն է։ 2016 թվականին ՅՈՒՆԵՍԿՕ-ն այս կամուրջը գրանցել է Համաշխարհային ժառանգության ցուցակում։ Արաբ պատմիչների վկայությամբ՝ այն վերականգնվել է 12-րդ դարում, սակայն կառուցվել է 7-րդ դարում հայ վարպետների կողմից։</p>
+                </div>
+                <div class="img-frame">
+                    <img src="images/batman.png" alt="Պատմական Բաթմանի կամուրջը">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">III. Մշակութային կյանքը, թատրոնը և պատմական հետքերը</h2>
+            <p class="intro-text">Տիգրան Մեծի տերության հզորությունն իր արտացոլումն էր գտնում մայրաքաղաքի մշակութային և կրթական կյանքում․</p>
+            
+            <div class="monuments">
+                <div class="monument-item">
+                    <h3>Առաջին Անտիկ Թատրոնը</h3>
+                    <img src="images/tigranakert_theatre.png" alt="Տիգրանակերտի անտիկ թատրոնի վայրը">
+                    <p>Հռոմեացի պատմիչ Պլուտարքոսի հաղորդմամբ՝ Տիգրանակերտում գործել է հունական թատրոն, որը կառուցվել էր Ք.ա. 69 թվականից առաջ։ Այստեղ ներկայացումները բեմադրվում էին հունարենով, հրավիրվում էին հույն դերասաններ, և հայ ազնվականությունը հաղորդակից էր դառնում հունական դրամատուրգիայի գլուխգործոցներին։</p>
+                </div>
+
+                <div class="monument-item">
+                    <h3>Արձանագրությունների ոչնչացումը</h3>
+                    <img src="images/hetq.png" alt="Տրդատ Գ արքայի ժամանակաշրջանի արձանագրությունների հետքերը">
+                    <p>1898-1899 թթ. գերմանացի գիտնականներ Լեհման-Հաուպտը և Բելքը տարածքում հայտնաբերել ու հրատարակել էին Տրդատ Գ արքայի (հեթանոսական) շրջանի արձանագրություններ (298-301 թթ.): Ցավոք, թուրքական իշխանությունները վերջին շրջանում քերել ու քանդել են դրանք՝ տարածքում Աթաթյուրքի տուն-թանգարան կառուցելու համար։</p>
+                </div>
+
+                <div class="monument-item">
+                    <h3>Արցախի Տիգրանակերտը</h3>
+                    <img src="images/artsakh_tigranakert.png" alt="Արցախի Տիգրանակերտի պեղումները">
+                    <p>Բացի բուն մայրաքաղաքից, Տիգրան Մեծը հիմնել է այլ քաղաքներ ևս, որոնցից ամենանշանավորն Արցախի Տիգրանակերտն է։ 2000-ականների պեղումներով բացվեցին վաղ քրիստոնեական եկեղեցու ավերակներ, պարիսպներ և կարասային թաղումներ։ Քաղաքը միջնադարում հայտնի էր «Տառնագյուտ» անունով։</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">IV. Ավանդական Խոհանոց. Տիգրանակերտի Բլղուրով Քյուֆթան</h2>
+            <div class="flex-row">
+                <div class="text-box">
+                    <p>Տիգրանակերտի տարածաշրջանում հնուց զարգացած է եղել հացահատիկային մշակաբույսերի, հատկապես ձավարեղենի նախնական մշակումը (բլղուր, փոխինդ)։ Տիգրանակերտցիների հայտնի և ավանդական կերակուրներից է հանդիսանում հում քոլոլակը (չի քյուֆթա)։</p>
+                    <p><strong>Պատրաստման եղանակը․</strong><br>
+                    1. Վերցնում են հորթի փորի մասի կարմիր, անճարպ միսը և քարով լավ ծեծում, մինչև ստացվի սուֆլեանման զանգված։<br>
+                    2. Ավելացնում են կիսաֆաբրիկատ բլղուրը (որը նախապես խաշել, չորացրել և աղացել են)։<br>
+                    3. Զանգվածը ձեռքերով երկար և արագ հունցում են, որի ընթացքում միսը ձեռքերի ջերմությունից «եփվում է»։<br>
+                    4. Համեմում են աղով ու պղպեղով և մատուցում։</p>
+                </div>
+                <div class="img-frame">
+                    <img src="images/kufta.png" alt="Տիգրանակերտի ավանդական բլղուրով քյուֆթա (հում քոլոլակ)">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Տիգրանակերտի Պատմական Անձնագիր</p>
+    </footer>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const captionText = document.getElementById("caption");
+        
+        // Հավաքում ենք Տիգրանակերտի էջի բոլոր նկարները մեկ զանգվածի մեջ
+        const images = Array.from(document.querySelectorAll('.img-frame img, .monument-item img'));
+        let currentIndex = 0;
+
+        images.forEach((image, index) => {
+            image.onclick = function() {
+                currentIndex = index; // Ֆիքսում ենք սեղմված նկարի ինդեքսը
+                openLightbox();
+            }
+        });
+
+        function openLightbox() {
+            lightbox.style.display = "block";
+            lightboxImg.src = images[currentIndex].src;
+            captionText.innerHTML = images[currentIndex].alt;
+        }
+
+        function changeImage(n) {
+            currentIndex += n;
+            if (currentIndex >= images.length) { currentIndex = 0; }
+            if (currentIndex < 0) { currentIndex = images.length - 1; }
+            
+            lightboxImg.style.animation = 'none';
+            setTimeout(() => { lightboxImg.style.animation = 'zoom 0.4s'; }, 10);
+            
+            lightboxImg.src = images[currentIndex].src;
+            captionText.innerHTML = images[currentIndex].alt;
+        }
+
+        const closeBtn = document.getElementsByClassName("close-lightbox")[0];
+        closeBtn.onclick = function() { 
+            lightbox.style.display = "none";
+        }
+
+        lightbox.onclick = function(event) {
+            if (event.target == lightbox) {
+                lightbox.style.display = "none";
+            }
+        }
+
+        // Ստեղնաշարով կառավարում (Սլաքներ և Escape)
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.style.display === "block") {
+                if (e.key === "ArrowLeft") changeImage(-1);
+                if (e.key === "ArrowRight") changeImage(1);
+                if (e.key === "Escape") lightbox.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -75,7 +75,23 @@ function updateFooterLink(title) {
         "Բրոյի-Բրոյի": "broyi.html",
         "Սասնո բառերի շարան": "barer.html",
         "Վայ Բաբո": "babo.html",
-        "Արի սիրուն": "arisirun.html"
+        "Արի սիրուն": "arisirun.html",
+        "Սասունասար":"sasunasar1.html",
+        "Կերթամ" : "kertam.html",
+        "Մազերդ օրորել ես" : "mazerd1.html",
+        "Դոնրե յար" : "donre2.html",
+"Շուշվա կեղը" : "shushva2.html",
+"Քաջ Նժդեհ" : "njdeh2.html",
+"Արազ ափին" : "araz2.html",
+"Լիկիլի" : "likili2.html",
+"Լիզբոն 5" : "lizbon2.html",
+"Ղարաբաղ" : "xarabax2.html",
+"Կամավոր" : "kamavor2.html",
+"Պիտի Պաշտպանենք" : "pashtpan2.html",
+"Հայ մնա" : "hay2.html",
+"Ով հայոց մայրեր" : "mayr2.html",
+"Մեր լեռները" : "lerner2.html"
+  
     };
 
     if (songPages[title]) {

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Հայկական Տոներ և Ծեսեր</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header" onclick="window.location.href='index.html';" style="cursor: pointer;">
+        <div class="logo">
+            <span class="eternity-sign">֎</span>
+            <span class="logo-text">ԺԱՌԱՆԳՈՒԹՅՈՒՆ</span>
+        </div>
+        <div class="header-right">
+            <nav class="nav-links">
+                <a href="song.html">Երգարան</a>
+                <a href="gallery.html">Պատկերասրահ</a>
+                <a href="toner.html" class="active">Տոներ</a>
+                <a href="ergir.html">Կտոր մը էրգիր</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="toner-hero">
+        <div class="hero-overlay"></div>
+        <div class="toner-hero-content">
+            <div class="tomar-urnament">❖ ֎ ❖</div>
+            <h1>ԱԶԳԱՅԻՆ ՏՈՆԵՐԻ ԽՈՐՀՈՒՐԴԸ</h1>
+            <p class="toner-desc">
+                Հայկական տոներն ու ծեսերը մեր նախնյաց կենսազգացողության, բնության հետ ներդաշնակության և հերոսական անցյալի արտացոլումն են։ Այս օրացույցում ամփոփված են տարվա բոլոր ավանդական, պետական ու ծիսական նշանավոր օրերը։
+            </p>
+        </div>
+    </section>
+
+    <section class="holidays-calendar-section">
+        <div class="calendar-container">
+            <h2 class="calendar-main-title">ԾԻՍԱԿԱՆ ՕՐԱՑՈՒՅՑ</h2>
+            <div class="tomar-urnament">❖ ֎ ❖</div>
+
+            <div class="season-block winter">
+                <h3 class="season-title">Ձմեռ</h3>
+                <div class="months-grid" id="winter-months"></div>
+            </div>
+
+            <div class="season-block spring">
+                <h3 class="season-title">Գարուն</h3>
+                <div class="months-grid" id="spring-months"></div>
+            </div>
+
+            <div class="season-block summer">
+                <h3 class="season-title">Ամառ</h3>
+                <div class="months-grid" id="summer-months"></div>
+            </div>
+
+            <div class="season-block autumn">
+                <h3 class="season-title">Աշուն</h3>
+                <div class="months-grid" id="autumn-months"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="f-line"></div>
+        <div class="f-content">
+            <span>© 2026 Հայկական Ժառանգություն</span>
+            <div class="socials">FB / IG / YT</div>
+            <span>Բալահովիտ, Հայաստան</span>
+        </div>
+    </footer>
+
+    <script>
+        // Քո տրամադրած բոլոր տոների տվյալների բազան (Ամիս / Օր)
+        // Շարժական տոները հաշվարկված են 2026թ.-ի օրացույցով (օրինակ՝ Զատիկը՝ Ապրիլի 12, Վարդավառը՝ Հուլիսի 19 և այլն)
+        const holidaysData = {
+            1: { // Հունվար
+                1: { name: "Ամանոր (Ոչ աշխատանքային)", url: "toner/amanor.html", isOff: true },
+                2: { name: "Ամանոր (Ոչ աշխատանքային)", url: "toner/amanor.html", isOff: true },
+                6: { name: "Սուրբ Ծնունդ և Աստվածահայտնություն (Ոչ աշխատանքային)", url: "toner/tsnund.html", isOff: true },
+                7: { name: "Մեռելոց / Հիշատակի օր (Ոչ աշխատանքային)", url: "toner/merelots.html", isOff: true },
+                27: { name: "Հիշատակի և խոնարհումի օր (Ոչ աշխատանքային)", url: "toner/hishataki-or.html", isOff: true },
+                28: { name: "Բանակի օր (Ոչ աշխատանքային)", url: "toner/banaki-or.html", isOff: true },
+                31: { name: "Սուրբ Սարգիս (Երիտասարդների և սիրո տոն)", url: "toner/surb-sargis.html" } // 2026-ին հունվարի 31-ն է
+            },
+            2: { // Փետրվար
+                12: { name: "Սուրբ Վարդանանց տոն", url: "toner/vardanants.html" }, // 2026-ին փետրվարի 12-ն է
+                14: { name: "Տրնդեզ (Տյառնընդառաջ / Միհրի պաշտամունք)", url: "toner/trndez.html" },
+                15: { name: "Բուն Բարեկենդան", url: "toner/barekendan.html" }, // 2026-ին փետրվարի 15-ն է
+                16: { name: "Մեծ Պահքի մեկնարկ և Ակլատիզի ծես", url: "toner/pahq.html" }, // Բարեկենդանի հաջորդ օրը
+                19: { name: "Գիրք նվիրելու օր", url: "toner/girq-nvirel.html" },
+                21: { name: "Մայրենի լեզվի օր", url: "toner/mayreni.html" },
+                28: { name: "Ադրբեջանական ԽՍՀ-ում ջարդերի զոհերի հիշատակի օր", url: "toner/hishataki-or-28.html" }
+            },
+            3: { // Մարտ
+                8: { name: "Կանանց միջազգային օր (Ոչ աշխատանքային)", url: "toner/kanants-or.html", isOff: true },
+                21: { name: "Հեթանոսական Ամանոր / Գարնանային գիշերահավասար", url: "toner/hetanosakan-amanor.html" }
+            },
+            4: { // Ապրիլ
+                1: { name: "Ծիծաղի օր", url: "toner/tsitsaghi-or.html" },
+                5: { name: "Ծաղկազարդ (Ծառզարդար)", url: "toner/tsaghkazard.html" }, // Զատկից 1 շաբաթ առաջ
+                7: { name: "Մայրության և գեղեցկության տոն", url: "toner/mayrutyan-ton.html" },
+                12: { name: "Սուրբ Զատիկ (Հարության տոն)", url: "toner/zatik.html" }, // 2026-ի Զատիկը
+                24: { name: "Հայոց ցեղասպանության զոհերի հիշատակի օր (Ոչ աշխատանքային)", url: "toner/tseghaspanutyun.html", isOff: true },
+                25: { name: "Հայաստանի քաղաքացու օր (Ապրիլի վերջին շաբաթ օրը)", url: "toner/qaghaqatsu-or.html" }
+            },
+            5: { // Մայիս
+                1: { name: "Աշխատանքի օր (Ոչ աշխատանքային)", url: "toner/ashxatanqi-or.html", isOff: true },
+                8: { name: "Երկրապահի օր", url: "toner/erqrapahi-or.html" },
+                9: { name: "Հաղթանակի և խաղաղության տոն / Շուշիի ազատագրում (Ոչ աշխատանքային)", url: "toner/haghtanaki-or.html", isOff: true },
+                15: { name: "Ընտանիքի օր", url: "toner/entanqi-or.html" },
+                16: { name: "Ուսանողների և երիտասարդների օր", url: "toner/usanoghneri-or.html" },
+                21: { name: "Ծաղկամայր (Համբարձման տոն)", url: "toner/hambardzum.html" }, // Զատկից 40 օր հետո
+                28: { name: "Հանրապետության տոն (Ոչ աշխատանքային)", url: "toner/hanrapetutyan-ton.html", isOff: true }
+            },
+            6: { // Հունիս
+                1: { name: "Երեխաների իրավունքների պաշտպանության օր", url: "toner/erexaneri-or.html" },
+                14: { name: "Բռնադատվածների հիշատակի օր", url: "toner/brnadatvatsner.html" },
+                15: { name: "Սուրբ Էջմիածնի տոն", url: "toner/ejmiatsin.html" } // Զատկից 64 օր հետո (կիրակի)
+            },
+            7: { // Հուլիս
+                5: { name: "Սահմանադրության օր / Պետական խորհրդանիշների օր (Ոչ աշխատանքային)", url: "toner/sahmanadrutyun.html", isOff: true },
+                19: { name: "Վարդավառ (Աստղիկ և Վահագն աստվածների տոն)", url: "toner/vardavar.html" } // 2026-ի Վարդավառը
+            },
+            8: { // Օգոստոս
+                11: { name: "Նավասարդ (Հին հայկական Ամանոր)", url: "toner/navasard.html" },
+                16: { name: "Խաղողօրհնեք (Անահիտ աստվածուհու տոն)", url: "toner/khaghoghorhneq.html" } // Օգոստոսի կեսերի կիրակին
+            },
+            9: { // Սեպտեմբեր
+                1: { name: "Գիտելիքի և դպրության օր", url: "toner/giteliqi-or.html" },
+                13: { name: "Խաչվերաց (Սուրբ Խաչ)", url: "toner/khachverats.html" }, // Սեպտեմբերի 11-17-ի կիրակին
+                21: { name: "Անկախության տոն (Ոչ աշխատանքային)", url: "toner/ankaxutyun.html", isOff: true }
+            },
+            10: { // Հոկտեմբեր
+                5: { name: "Ուսուցչի օր", url: "toner/usutschi-or.html" },
+                10: { name: "Էրեբունի-Երևան / Թարգմանչաց տոն", url: "toner/erebuni-erevan.html" } // Հոկտեմբերի 2-րդ շաբաթ օրը
+            },
+            11: { // Նոյեմբեր
+                10: { name: "Տեղական ինքնակառավարման օր", url: "toner/tiko.html" },
+                17: { name: "Ուսանողների միջազգային օր", url: "toner/usanoghner.html" }
+            },
+            12: { // Դեկտեմբեր
+                7: { name: "Երկրաշարժի զոհերի հիշատակի օր", url: "toner/erkrasharzh.html" },
+                9: { name: "Ցեղասպանությունների դատապարտման և կանխարգելման օր", url: "toner/tseghaspanության-kanxargelum.html" },
+                31: { name: "Կաղանդ / Ձմեռային Ամանոր (Ոչ աշխատանքային)", url: "toner/amanor.html", isOff: true }
+            }
+        };
+
+        // Ամիսների անունները և օրերի քանակը
+        const monthsInfo = [
+            { id: 1, name: "Հունվար", days: 31, season: "winter" },
+            { id: 2, name: "Փետրվար", days: 28, season: "winter" }, // 2026-ը նահանջ չէ
+            { id: 3, name: "Մարտ", days: 31, season: "spring" },
+            { id: 4, name: "Ապրիլ", days: 30, season: "spring" },
+            { id: 5, name: "Մայիս", days: 31, season: "spring" },
+            { id: 6, name: "Հունիս", days: 30, season: "summer" },
+            { id: 7, name: "Հուլիս", days: 31, season: "summer" },
+            { id: 8, name: "Օգոստոս", days: 31, season: "summer" },
+            { id: 9, name: "Սեպտեմբեր", days: 30, season: "autumn" },
+            { id: 10, name: "Հոկտեմբեր", days: 31, season: "autumn" },
+            { id: 11, name: "Նոյեմբեր", days: 30, season: "autumn" },
+            { id: 12, name: "Դեկտեմբեր", days: 31, season: "winter" }
+        ];
+
+        // Ֆունկցիա՝ օրացույցը ավտոմատ գեներացնելու համար
+        function generateCalendar() {
+            monthsInfo.forEach(m => {
+                // Ստեղծում ենք ամսվա արկղը (Month Box)
+                const monthBox = document.createElement('div');
+                monthBox.className = 'month-box';
+                
+                const monthTitle = document.createElement('h4');
+                monthTitle.innerText = m.name;
+                monthBox.appendChild(monthTitle);
+
+                const daysGrid = document.createElement('div');
+                daysGrid.className = 'days-grid';
+
+                // Լցնում ենք օրերը
+                for (let d = 1; d <= m.days; d++) {
+                    let dayElement;
+
+                    // Ստուգում ենք՝ արդյոք այսօր տոն է
+                    if (holidaysData[m.id] && holidaysData[m.id][d]) {
+                        const holiday = holidaysData[m.id][d];
+                        
+                        dayElement = document.createElement('a');
+                        dayElement.href = holiday.url;
+                        dayElement.innerText = d;
+                        dayElement.title = holiday.name;
+                        
+                        // Եթե ոչ աշխատանքային պետական օր է, տալիս ենք լրացուցիչ ոճ
+                        if (holiday.isOff) {
+                            dayElement.className = 'day-num holiday-day public-holiday';
+                        } else {
+                            dayElement.className = 'day-num holiday-day';
+                        }
+                    } else {
+                        // Սովորական օր
+                        dayElement = document.createElement('span');
+                        dayElement.className = 'day-num';
+                        dayElement.innerText = d;
+                    }
+                    
+                    daysGrid.appendChild(dayElement);
+                }
+
+                monthBox.appendChild(daysGrid);
+
+                // Տեղադրում ենք համապատասխան եղանակի բլոկի մեջ
+                document.getElementById(`${m.season}-months`).appendChild(monthBox);
+            });
+        }
+
+        // Մեկնարկում ենք գեներացումը
+        generateCalendar();
+    </script>
+</body>
+</html>
