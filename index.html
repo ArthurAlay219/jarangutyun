@@ -21,11 +21,12 @@
                 <input type="text" placeholder="Որոնել...">
                 <button>🔍</button>
             </div>
-            <nav class="nav-links">
-                <a href="song.html">Երգարան</a>
-                <a href="gallery.html">Պատկերասրահ</a>
-                <a href="ergir.html">Կտոր մը էրգիր</a>
-            </nav>
+         <nav class="nav-links">
+    <a href="song.html">Երգարան</a>
+    <a href="gallery.html">Պատկերասրահ</a>
+    <a href="toner.html">Տոներ</a>
+     <a href="ergir.html">Կտոր մը էրգիր</a>
+</nav>
         </div>
     </header>
 
@@ -55,7 +56,22 @@
             <p>Մեր նախնյաց ավանդություններն ու հուշերը:</p>
         </div>
     </section>
-
+<section class="tomar-section">
+        <div class="tomar-container">
+            <h2 class="tomar-title">ՀԱՅԿԱԿԱՆ ՏՈՄԱՐ</h2>
+            <div class="tomar-urnament">❖ ֎ ❖</div>
+            
+            <div class="tomar-scroll">
+                <p class="tomar-line-text">
+                    Այսօր է Ամիսը <span id="tomar-month" class="tomar-value">...</span> 
+                    Օրն <span id="tomar-day" class="tomar-value">...</span> 
+                    իսկ ժամն է <br>Արեգակնային <span id="tomar-time" class="tomar-value">...</span>
+                </p>
+            </div>
+        </div>
+    </section>
+  
+</section>
     <footer class="main-footer">
         <div class="f-line"></div>
         <div class="f-content">
@@ -64,6 +80,85 @@
             <span>Բալահովիտ, Հայաստան</span>
         </div>
     </footer>
+<script>
+    function getArmenianMonthAndDay(date) {
+        const currentYear = date.getFullYear();
+        
+        const milestones = [
+            { name: "Նավասարդ", start: new Date(currentYear, 7, 11) },
+            { name: "Հոռի",      start: new Date(currentYear, 8, 10) },
+            { name: "Սահմի",     start: new Date(currentYear, 9, 10) },
+            { name: "Տրե",       start: new Date(currentYear, 10, 9) },
+            { name: "Քաղոց",     start: new Date(currentYear, 11, 9) },
+            { name: "Արաց",      start: new Date(currentYear, 0, 8) },
+            { name: "Մեհեկան",   start: new Date(currentYear, 1, 7) },
+            { name: "Արեգ",      start: new Date(currentYear, 2, 9) },
+            { name: "Ահեկան",    start: new Date(currentYear, 3, 8) },
+            { name: "Մարերի",    start: new Date(currentYear, 4, 8) },
+            { name: "Մարգաց",    start: new Date(currentYear, 5, 7) },
+            { name: "Հրոտից",    start: new Date(currentYear, 6, 7) },
+            { name: "Ավելյաց",   start: new Date(currentYear, 7, 6) }
+        ];
 
+        if (date < new Date(currentYear, 0, 8)) {
+            milestones[0].start.setFullYear(currentYear - 1);
+            milestones[1].start.setFullYear(currentYear - 1);
+            milestones[2].start.setFullYear(currentYear - 1);
+            milestones[3].start.setFullYear(currentYear - 1);
+            milestones[4].start.setFullYear(currentYear - 1);
+        }
+
+        let activeMilestone = milestones[0];
+        for (let i = 0; i < milestones.length; i++) {
+            if (date >= milestones[i].start) {
+                activeMilestone = milestones[i];
+            }
+        }
+        
+        const diffTime = Math.abs(date - activeMilestone.start);
+        const armenianDayIndex = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+
+        const regularDays = [
+            "Արեգ", "Հրանդ", "Արամ", "Մարգար", "Ահրանք", "Մազդեղ", "Աստղիկ", "Միհր", "Ձոպաբեր", "Մուրց",
+            "Երեզկան", "Անի", "Պարխար", "Վանատուր", "Արամազդ", "Մանի", "Ասակ", "Մասիս", "Անահիտ", "Արագած",
+            "Գրգուռ", "Կորդուիք", "Ծմակ", "Լուսնակ", "Ցրոն", "Նպատ", "Վահագն", "Սիմ", "Վարագ", "Գիշերավար"
+        ];
+
+        const avelyatsDays = ["Լուծ", "Եղջերու", "Ծկրավորի", "Արտախույր", "Փառազնոտի"];
+
+        let dayName = "";
+        if (activeMilestone.name === "Ավելյաց") {
+            dayName = avelyatsDays[armenianDayIndex - 1] || "Լուծ";
+        } else {
+            dayName = regularDays[armenianDayIndex - 1] || "Արեգ";
+        }
+
+        return { month: activeMilestone.name, day: dayName };
+    }
+
+    function getArmenianHourName(hours) {
+        const hourNames = [
+            "Խաւարականն", "Աղջամուղջն", "Մթացեալն", "Շաղաւոտն", "Կամաւոտն", "Բաւականն", 
+            "Հաւթափեալն", "Գիզկան", "Լուսաճեմն", "Առաւօտն", "Լուսափայլն", "Փայլածումն", 
+            "Այգն", "Ծայգն", "Զօրացեալն", "Ճառագայթեալն", "Շառաւիղեալն", "Երկրատեսն", 
+            "Շանթակալն", "Հրակաթն", "Հուրթափեալն", "Թաղանթեալն", "Առաւարն", "Արփողն"
+        ];
+        return hourNames[hours] || "Խաւարականն";
+    }
+
+    function updateTomar() {
+        const now = new Date();
+
+        const armenianCalendar = getArmenianMonthAndDay(now);
+        const armenianHour = getArmenianHourName(now.getHours());
+
+        document.getElementById('tomar-month').innerText = armenianCalendar.month;
+        document.getElementById('tomar-day').innerText = armenianCalendar.day;
+        document.getElementById('tomar-time').innerText = armenianHour;
+    }
+
+    updateTomar();
+    setInterval(updateTomar, 10000);
+</script>
 </body>
 </html>
