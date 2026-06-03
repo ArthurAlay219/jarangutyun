@@ -372,3 +372,465 @@ input[type="range"] {
 .download-btn:active {
     transform: translateY(1px);
 }
+/* Հայկական Շնչով Տոմարի Ոճեր */
+.tomar-section {
+    padding: 80px 20px;
+    background: #1a1a1a;
+    text-align: center;
+    position: relative;
+}
+
+.tomar-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tomar-title {
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+}
+
+/* Զարդանախշի հատվածը */
+.tomar-urnament {
+    color: #444;
+    font-size: 1.2rem;
+    margin: 15px 0 35px;
+    letter-spacing: 10px;
+}
+
+/* Հին մատյանի էֆեկտ */
+.tomar-scroll {
+    border-left: 2px solid rgba(212, 175, 55, 0.3);
+    border-right: 2px solid rgba(212, 175, 55, 0.3);
+    padding: 30px 40px;
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(212,175,55,0.02), rgba(0,0,0,0.5));
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.tomar-line-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    color: #a0a0a0;
+    line-height: 2;
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Հին հայերենի շեշտադրումներ */
+.tomar-highlight {
+    color: #888;
+    font-size: 1.4rem;
+}
+
+/* Ոսկեգույն փոփոխվող արժեքներ */
+.tomar-value {
+    color: #d4af37;
+    font-weight: bold;
+    font-style: normal;
+    border-bottom: 1px dotted rgba(212, 175, 55, 0.4);
+    padding-bottom: 2px;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+}
+
+/* Մոբայլի համար */
+@media (max-width: 768px) {
+    .tomar-line-text {
+        font-size: 1.2rem;
+    }
+    .tomar-scroll {
+        padding: 20px;
+    }
+}
+/* Տոների Օրացույցի Բաժին */
+.holidays-calendar-section {
+    padding: 60px 20px;
+    background: #121212; /* Ավելի մուգ ֆոն խորության համար */
+    text-align: center;
+}
+
+.calendar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendar-main-title {
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+/* Եղանակների Բլոկներ */
+.season-block {
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(212, 175, 55, 0.05);
+}
+
+.season-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    color: #e0e0e0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Ամիսների դասավորությունը (3 ամիս կողք-կողքի) */
+.months-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.month-box {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.month-box h4 {
+    color: #d4af37;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+/* Օրերի ցանցը (7 սյունակ՝ շաբաթվա օրերի պես) */
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    justify-items: center;
+}
+
+/* Սովորական օրվա թիվ */
+.day-num {
+    color: #666;
+    font-size: 0.95rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    user-select: none;
+}
+
+/* ՏՈՆԱԿԱՆ ՕՐԵՐԻ ՈՃԸ */
+.day-num.holiday-day {
+    color: #d4af37;
+    font-weight: bold;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.05);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.1);
+}
+
+/* Երբ մկնիկը պահում ենք տոնի վրա */
+.day-num.holiday-day:hover {
+    background: #d4af37;
+    color: #000;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+    transform: scale(1.1);
+}
+
+/* Մոբայլ համապատասխանեցում */
+@media (max-width: 768px) {
+    .months-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Տոների էջի վերևի հատվածի ոճերը */
+.toner-hero {
+    padding: 100px 20px;
+    background-image: url('images/khachkar-bg.jpg'); /* Կարող ես դնել քո խաչքարի կամ հին մատյանի նկարը */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    position: relative;
+}
+
+.toner-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85); /* Մութ քող նկարի վրայից */
+    z-index: 1;
+}
+
+.toner-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.toner-hero-content h1 {
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.toner-desc {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+}
+
+/* Ակտիվ հղման գույնը մենյուում */
+.nav-links a.active {
+    color: #d4af37;
+    border-bottom: 1px solid #d4af37;
+}
+/* Տոների Օրացույցի Ամբողջական Ոճեր */
+.holidays-calendar-section {
+    padding: 60px 20px;
+    background: #121212;
+    text-align: center;
+}
+
+.calendar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendar-main-title {
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.season-block {
+    margin-bottom: 60px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(212, 175, 55, 0.03);
+}
+
+.season-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.6rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.months-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.month-box {
+    background: #1a1a1a;
+    border: 1px solid #252525;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.month-box h4 {
+    color: #d4af37;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.day-num {
+    color: #555;
+    font-size: 0.95rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    user-select: none;
+    font-family: 'Georgia', serif;
+}
+
+/* ԾԻՍԱԿԱՆ / ԱԶԳԱՅԻՆ ՏՈՆԵՐ (Ոսկեգույն նուրբ շրջանակ) */
+.day-num.holiday-day {
+    color: #d4af37;
+    font-weight: bold;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.03);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ՊԵՏԱԿԱՆ ՈՉ ԱՇԽԱՏԱՆՔԱՅԻՆ ՕՐԵՐ (Լեցուն ոսկեգույն ֆոն՝ սև տեքստով) */
+.day-num.holiday-day.public-holiday {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.1);
+}
+
+/* Hover էֆեկտ՝ երբ մկնիկը պահում ենք տոնի վրա */
+.day-num.holiday-day:hover {
+    background: #d4af37;
+    color: #121212;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+    transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+    .months-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- ՏՈՆԵՐԻ ԱՌԱՆՁԻՆ ԷՋԵՐԻ ՈՃԵՐ --- */
+
+/* Ընդհանուր Սեկցիաների Կարգավորում */
+.holiday-section {
+    padding: 80px 20px;
+    background: #141414;
+    color: #e0e0e0;
+}
+
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    color: #d4af37;
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.title-line {
+    width: 60px;
+    height: 1px;
+    background: rgba(212, 175, 55, 0.4);
+    margin: 0 auto 40px;
+}
+
+/* 1. HERO SECTION */
+.holiday-hero {
+    padding: 160px 20px 120px;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ֆոնային նկարը Տրնդեզի համար (դիր քո նկարը) */
+.trndez-hero-bg {
+    background-image: url('images/trndez-hero.jpg'); 
+    background-color: #0d0d0d; /* Եթե նկարը չբացվի */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), #141414);
+    z-index: 1;
+}
+
+.holiday-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.holiday-date {
+    color: #888;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.holiday-hero-content h1 {
+    color: #d4af37;
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    font-family: 'Georgia', serif;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.holiday-subtitle {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    margin-bottom: 30px;
+}
+
+/* 2. HISTORY SECTION */
+.holiday-history {
+    background: #141414;
+}
+
+.history-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #b8b8b8;
+    text-align: justify;
+    margin-bottom: 25px;
+    text-indent: 30px;
+}
+
+/* 3. RITUALS SECTION */
+.holiday-rituals {
+    background: #111111; /* Թեթև ֆոնային տարանջատում */
+    border-top: 1px solid rgba(212, 175, 55, 0.02);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.02);
+}
+
+.rituals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.ritual-card {
+    background: #181818;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 30px 20px;
+    transition: 0.3s ease
+}
