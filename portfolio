@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Ecosystem | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: rgba(22, 22, 22, 0.8);
+            --accent-gold: #d4af37;
+            --accent-dim-gold: #aa8c2c;
+            --text-main: #ffffff;
+            --text-muted: #999999;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Գլխավոր կոնտեյներ */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 20px 60px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Վերևի Նավիգացիոն Մենյու */
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+        }
+
+        .nav-brand {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-item {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--accent-gold);
+        }
+
+        /* Էջերի Բաժիններ (Tabs) */
+        .page-section {
+            display: none;
+            flex-direction: column;
+            gap: 25px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .page-section.active-section {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- ՇՔԵՂ ԳԼԽԱՎՈՐ ՔԱՐՏ (ԺԱՌԱՆԳՈՒԹՅՈՒՆ) --- */
+        .main-project-card {
+            background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        .main-project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+        }
+
+        .main-badge {
+            background: gold;
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            color: #000;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .main-title {
+            font-size: 26px;
+            font-weight: 800;
+            margin: 0 0 12px 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .main-desc {
+            font-size: 14px;
+            color: #cccccc;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+
+        .main-action-btn {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- ՊՐՈՅԵԿՏՆԵՐԻ ԲԼՈԿՆԵՐ (Rim, Bonsai) --- */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sub-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .sub-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            background-color: #161616;
+            transform: translateX(3px);
+        }
+
+        .sub-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sub-title {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .sub-tag {
+            font-size: 11px;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .sub-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* --- «ԻՄ ՄԱՍԻՆ» ԷՋԻ ՈՃԸ --- */
+        .about-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-text {
+            font-size: 15px;
+            color: #e0e0e0;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* --- «ԿՈՆՏԱԿՏ» ԷՋԻ ՈՃԸ --- */
+        .contact-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .contact-icon {
+            font-size: 20px;
+            color: var(--accent-gold);
+        }
+
+        /* Ֆուտեր */
+        footer {
+            text-align: center;
+            font-size: 11px;
+            color: #333333;
+            margin-top: auto;
+            padding: 20px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <nav class="nav-header">
+            <div class="nav-brand">DIGITAL HUB</div>
+            <div class="nav-links">
+                <span class="nav-item active" onclick="switchTab('projects', this)">Նախագծեր</span>
+                <span class="nav-item" onclick="switchTab('about', this)">Իմ մասին</span>
+                <span class="nav-item" onclick="switchTab('contact', this)">Կապ</span>
+            </div>
+        </nav>
+
+        <div id="projects-section" class="page-section active-section">
+            
+            <a href="https://arthuralay219.github.io/jarangutyun/" class="main-project-card" target="_blank">
+                <div class="main-badge">Գլխավոր Արխիվ</div>
+                <h2 class="main-title" style="font-family: 'Nork', sans-serif;">ԺԱՌԱՆԳՈՒԹՅՈՒՆ</h2>
+                <p class="main-desc">Հայկական մշակութային ժառանգության, պատմական աշխարհագրության և ազգագրական երգերի թվային մեդիա-գրադարան։</p>
+                <div class="main-action-btn">Մուտք Գործել ⚡</div>
+            </a>
+
+            <div class="projects-grid">
+                
+                <a href="https://rimepoxy-cpu.github.io/rim_epoxy/" class="sub-card" target="_blank" style="padding: 0; overflow: hidden;">
+                    <div style="width: 100%; height: 160px; background-image: url('tray.png'); background-size: cover; background-position: center; position: relative;">
+                        <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); padding: 4px 10px; border-radius: 8px; font-size: 11px; color: var(--accent-gold); font-weight: 500; border: 1px solid rgba(212,175,55,0.3);">
+                            Premium Demo
+                        </div>
+                    </div>
+                    <div style="padding: 20px;">
+                        <span class="sub-title" style="display: block; margin-bottom: 5px;">Rim Epoxy</span>
+                        <p class="sub-desc">Էպոքսիդային խեժից և բնական փայտից պատրաստված բացառիկ աշխատանքների ցուցափեղկ-կայք։</p>
+                    </div>
+                </a>
+
+                <a href="https://bonsaiartweb-create.github.io/bonsai-art/" class="sub-card" target="_blank" style="padding: 0; overflow: hidden;">
+                    <div style="width: 100%; height: 160px; background-image: url('bonsai-preview.png'); background-size: cover; background-position: center; position: relative;">
+                        <div style="position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); padding: 4px 10px; border-radius: 8px; font-size: 11px; color: var(--accent-gold); font-weight: 500; border: 1px solid rgba(212,175,55,0.3);">
+                            E-commerce Demo
+                        </div>
+                    </div>
+                    <div style="padding: 20px;">
+                        <span class="sub-title" style="display: block; margin-bottom: 5px;">Bonsai Art</span>
+                        <p class="sub-desc">Մինիմալիստական էսթետիկայով նախագծված էջ՝ սենյակային բույսերի և բոնսայների մշակման բիզնեսի համար։</p>
+                    </div>
+                </a>
+
+                <div class="sub-card" style="opacity: 0.4; cursor: default;">
+                    <div class="sub-card-header">
+                        <span class="sub-title">Նոր Բրենդ</span>
+                        <span class="sub-tag" style="color: #666;">Շուտով</span>
+                    </div>
+                    <p class="sub-desc">Հաջորդ տեղական բիզնեսի պատրաստի վեբ-պլատֆորմը։</p>
+                </div>
+
+            </div>
+        
+        </div>
+<div id="about-section" class="page-section">
+            
+            <div class="about-card" style="margin-bottom: 5px;">
+                <h2 style="color: var(--accent-gold); margin-top:0; letter-spacing: 2px; text-transform: uppercase; font-size: 20px;">Ով եմ ես</h2>
+                <p class="about-text" style="font-size: 16px; font-weight: 500;">
+                    Բարև, ես զբաղվում եմ ոչ միայն թվային տեխնոլոգիաներով, այլև իրական, շոշափելի արհեստների ու մշակութային արժեքների պահպանմամբ:
+                </p>
+                <p class="about-text" style="color: var(--text-muted); font-size: 14px;">
+                    Ինձ համար վեբ-դիզայնը պարզապես կոդերի հավաքածու չէ, այլ յուրաքանչյուր գաղափարին ու բրենդին յուրահատուկ, Premium շունչ տալու արվեստ։
+                </p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                        <span style="font-size: 20px; color: var(--accent-gold);">💻</span>
+                        <h3 style="margin: 0; font-size: 16px; letter-spacing: 1px; text-transform: uppercase;">UI/UX & Web Dev</h3>
+                    </div>
+                    <p style="margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                        Ստեղծում եմ արագ, ժամանակակից և լիարժեք ադապտացված (Responsive) կայքեր փոքր ու միջին բիզնեսների համար: Օգնում եմ հայկական բրենդներին ունենալ սեփական, տարբերվող թվային դեմքը:
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                        <span style="font-size: 20px; color: var(--accent-gold);">ուր</span>
+                        <h3 style="margin: 0; font-size: 16px; letter-spacing: 1px; text-transform: uppercase;">Ատաղձագործություն</h3>
+                    </div>
+                    <p style="margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                        Փայտի հետ աշխատանքը իմ մեծագույն կրքերից է: Պատշգամբի իմ փոքրիկ արվեստանոցում ձեռքի գործիքներով պատրաստում եմ ֆունկցիոնալ իրեր, կահույք և զբաղվում եմ գործիքների վերականգնմամբ: Իրական նյութի զգացողությունն ինձ էներգիա է տալիս:
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                        <span style="font-size: 20px; color: var(--accent-gold);">🦅</span>
+                        <h3 style="margin: 0; font-size: 16px; letter-spacing: 1px; text-transform: uppercase;">Մշակութային Ժառանգություն</h3>
+                    </div>
+                    <p style="margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                        «Ժառանգություն» նախագծի միջոցով զբաղվում եմ հայկական ազգագրական, հայրենասիրական ու աշուղական երգերի, ինչպես նաև պատմական աշխարհագրության թվայնացմամբ ու պահպանմամբ: Հավատում եմ, որ արմատները պահելը մեր ամենակարևոր առաքելությունն է։
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+       <div id="contact-section" class="page-section">
+            <div class="contact-card">
+                <h2 style="color: var(--accent-gold); margin-top:0; letter-spacing: 2px; text-transform: uppercase; font-size: 20px; margin-bottom: 5px;">Կապ հաստատել</h2>
+                <p style="color: var(--text-muted); font-size: 13px; margin: 0 0 20px 0; line-height: 1.5;">
+                    Ունե՞ք գաղափար, թե՞ ցանկանում եք պատվիրել անհատական կայք ձեր բրենդի համար: Գրեք ինձ ստորև նշված հարթակներով.
+                </p>
+                
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    
+                    <a href="https://www.instagram.com/webcreate.am/" class="contact-item" target="_blank">
+                        <span class="contact-icon" style="background: rgba(212, 175, 55, 0.1); padding: 8px; border-radius: 50%; display: inline-flex;">📸</span>
+                        <div style="display: flex; flex-direction: column; gap: 2px;">
+                            <span style="font-size: 14px; font-weight: 600;">Instagram</span>
+                            <span style="font-size: 12px; color: var(--text-muted);">@your_username</span>
+                        </div>
+                    </a>
+
+                    <a href="https://t.me/ՔՈ-ՏԵԼԵԳՐԱՄԻ-ԱՆՈՒՆԸ" class="contact-item" target="_blank">
+                        <span class="contact-icon" style="background: rgba(212, 175, 55, 0.1); padding: 8px; border-radius: 50%; display: inline-flex;">✈️</span>
+                        <div style="display: flex; flex-direction: column; gap: 2px;">
+                            <span style="font-size: 14px; font-weight: 600;">Telegram</span>
+                            <span style="font-size: 12px; color: var(--text-muted);">Արագ նամակ</span>
+                        </div>
+                    </a>
+
+                    <a href="mailto:karpedie.office@gmail.com" class="contact-item">
+                        <span class="contact-icon" style="background: rgba(212, 175, 55, 0.1); padding: 8px; border-radius: 50%; display: inline-flex;">✉️</span>
+                        <div style="display: flex; flex-direction: column; gap: 2px;">
+                            <span style="font-size: 14px; font-weight: 600;">Էլ. Փոստ</span>
+                            <span style="font-size: 12px; color: var(--text-muted);">karpedie.office@gmail.com</span>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.01); border-radius: 12px; border: 1px dashed rgba(212,175,55,0.2); text-align: center;">
+                    <p style="margin: 0; font-size: 12px; color: var(--accent-gold); letter-spacing: 0.5px;">
+                        📍 Հայաստան, Բալահովիտ
+                    </p>
+                   
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Ecosystem Hub
+        </footer>
+    </div>
+
+    <script>
+        function switchTab(tabName, element) {
+            // Հեռացնում ենք ակտիվությունը հին կոճակներից
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            // Ավելացնում ենք ակտիվություն սեղմվածին
+            element.classList.add('active');
+
+            // Թաքցնում ենք բոլոր բաժինները
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active-section'));
+            // Ցույց ենք տալիս ընտրվածը
+            document.getElementById(tabName + '-section').classList.add('active-section');
+        }
+    </script>
+</body>
+</html>
